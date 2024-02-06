@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-To get started, setup your neovim configuration:
+Get started by setting up your Neovim configuration:
 
 - Backup your existing nvim configuration folder
 
