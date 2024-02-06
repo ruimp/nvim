@@ -7,7 +7,9 @@ To get started, setup your neovim configuration:
 - Backup your existing nvim configuration folder
 
 `mv ~/.config/nvim{,.bak}`
+
 `mv ~/.local/share/nvim{,.bak}`
+
 `mv ~/.local/state/nvim{,.bak}`
 
 - Clone this repository
