@@ -1,0 +1,59 @@
+return {
+  "hrsh7th/nvim-cmp",
+  dependencies = {
+    "saadparwaiz1/cmp_luasnip",
+    "hrsh7th/cmp-nvim-lsp",
+    {
+      "windwp/nvim-autopairs",
+      event = "InsertEnter",
+      opts = {},
+    },
+  },
+  config = function()
+    local lspconfig = require("lspconfig")
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+    local cmp = require("cmp")
+    local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+    local luasnip = require("luasnip")
+    local servers = {
+      "lua_ls",
+      "tsserver",
+    }
+    for _, lsp in ipairs(servers) do
+      lspconfig[lsp].setup({
+        capabilities = capabilities,
+      })
+    end
+    cmp.setup({
+      snippet = {
+        expand = function(args)
+          luasnip.lsp_expand(args.body)
+        end,
+      },
+      sources = {
+        { name = "nvim_lsp" },
+        { name = "buffer" },
+      },
+      mapping = cmp.mapping.preset.insert({
+        ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-d>"] = cmp.mapping.scroll_docs(4),
+        ["<C-n>"] = cmp.mapping.select_next_item(),
+        ["<C-m>"] = cmp.mapping.select_prev_item(),
+        ["<C-Space>"] = cmp.mapping.complete(),
+        ["<CR>"] = cmp.mapping.confirm({
+          behavior = cmp.ConfirmBehavior.Replace,
+          select = true,
+        }),
+      }),
+    })
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      callback = function()
+        vim.lsp.buf.format({ async = false })
+      end,
+    })
+    cmp.event:on(
+      "confirm_done",
+      cmp_autopairs.on_confirm_done()
+    )
+  end,
+}
