@@ -11,8 +11,9 @@ return {
       c = "code",
       h = "harpoon",
       t = "toggle",
+      x = "trouble"
     }
-    opts = { prefix = "<leader>" }
+    local opts = { prefix = "<leader>" }
     wk.register(mappings, opts)
   end,
 }
