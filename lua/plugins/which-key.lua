@@ -3,7 +3,7 @@ return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
 	config = function()
-		require("which-key").setup({})
+		require("which-key").setup()
 		local wk = require("which-key")
 		local mappings = {
 			f = "find",
@@ -12,6 +12,7 @@ return {
 			h = "harpoon",
 			t = "toggle",
 			x = "trouble",
+			G = "git",
 		}
 		local opts = { prefix = "<leader>" }
 		wk.register(mappings, opts)

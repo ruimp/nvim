@@ -6,4 +6,22 @@ return {
 		"nvim-telescope/telescope.nvim",
 	},
 	opts = {},
+	keys = {
+		{
+			"<leader>Gg",
+			mode = "n",
+			function()
+				require("neogit").open()
+			end,
+			desc = "Open",
+		},
+		{
+			"<leader>Gs",
+			mode = "n",
+			function()
+				require("neogit").open({ kind = "auto" })
+			end,
+			desc = "Split",
+		},
+	},
 }
