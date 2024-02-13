@@ -1,4 +1,4 @@
 -- LaTeX support
 return {
-  "lervag/vimtex",
+	"lervag/vimtex",
 }

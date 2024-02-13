@@ -17,6 +17,20 @@ return {
 				},
 			},
 		},
+		{
+			"mfussenegger/nvim-lint",
+			config = function()
+				require("lint").linters_by_ft = {
+					lua = { "luacheck" },
+					markdown = { "markdownlint" },
+				}
+				vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+					callback = function()
+						require("lint").try_lint()
+					end,
+				})
+			end,
+		},
 	},
 	keys = {
 		{
@@ -66,7 +80,7 @@ return {
 				}),
 			}),
 		})
-		vim.api.nvim_create_autocmd("BufWritePre", {
+		vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 			callback = function()
 				require("conform").format()
 			end,
