@@ -15,7 +15,7 @@ return {
       function() require("todo-comments").jump_prev() end,
       desc = "Previous Comment"
     },
-    -- TODO: Do somethings here
+    -- TODO: Something important
     {
       "<leader>xt",
       mode = "n",

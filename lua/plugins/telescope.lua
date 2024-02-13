@@ -1,34 +1,59 @@
--- Fuzzy finder
+-- f Fuzzy finder
 return {
-  {
-    "nvim-telescope/telescope-fzf-native.nvim",
-    build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+  "nvim-telescope/telescope.nvim",
+  branch = "0.1.x",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build =
+      "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+    },
   },
-  {
-    "nvim-telescope/telescope.nvim",
-    branch = "0.1.x",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      -- setup telescope
-      require("telescope").setup({
-        extensions = {
-          fzf = {
-            fuzzy = true,
-            override_generic_sorter = true,
-            override_file_sorter = true,
-            case_mode = "smart_case",
-          },
-        },
-      })
-      -- extensions
-      require("telescope").load_extension("fzf")
-      -- keymaps
-      local builtin = require("telescope.builtin")
-      vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "File" })
-      vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Text" })
-      vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
-      vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help" })
-      vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Recent" })
-    end,
+  opts = {
+    extensions = {
+      fzf = {
+        fuzzy = true,
+        override_generic_sorter = true,
+        override_file_sorter = true,
+        case_mode = "smart_case",
+      },
+    },
   },
+  keys = {
+    {
+      "<leader>ff",
+      mode = "n",
+      function() require("telescope.builtin").find_files() end,
+      desc = "Files",
+    },
+    {
+      "<leader>fg",
+      mode = "n",
+      function() require("telescope.builtin").live_grep() end,
+      desc = "Text",
+    },
+    {
+      "<leader>fb",
+      mode = "n",
+      function() require("telescope.builtin").buffers() end,
+      desc = "Buffers",
+    },
+    {
+      "<leader>fh",
+      mode = "n",
+      function() require("telescope.builtin").help_tags() end,
+      desc = "Help Tags",
+    },
+    {
+      "<leader>fr",
+      mode = "n",
+      function() require("telescope.builtin").oldfiles() end,
+      desc = "Recent Files",
+    },
+  },
+  config = function()
+    local telescope = require("telescope")
+    telescope.load_extension("fzf")
+  end,
 }

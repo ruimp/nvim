@@ -7,15 +7,19 @@ return {
     "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
   },
-  config = function()
-    local tree = require("neo-tree")
-    tree.setup({
-      wndow = {
-        mappings = {
-          ["P"] = { "toggle_preview", config = { use_float = true } },
-        },
+  opts = {
+    wndow = {
+      mappings = {
+        ["P"] = { "toggle_preview", config = { use_float = true } },
       },
-    })
-    vim.keymap.set("n", "<leader>fe", "<cmd>Neotree toggle<cr>", { desc = "Tree" })
-  end,
+    },
+  },
+  keys = {
+    {
+      "<leader>fe",
+      mode = "n",
+      "<cmd>Neotree toggle<cr>",
+      desc = "File Tree"
+    },
+  },
 }
