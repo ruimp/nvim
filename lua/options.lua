@@ -27,6 +27,7 @@ local options = {
   completeopt = { "menuone", "noselect" },
   timeout = true,
   timeoutlen = 300,
+  conceallevel = 2,
 
   -- Search
   ignorecase = true,

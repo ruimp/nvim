@@ -4,14 +4,14 @@ return {
     "nvim-treesitter/nvim-treesitter-textobjects",
   },
   build = ":TSUpdate",
-  config = function()
-    require("nvim-treesitter.configs").setup({
-      ensure_installed = {
-        "lua",
-        "vimdoc",
-      },
-      highlight = { enable = true },
-      indent = { enable = true },
-    })
-  end,
+  opts = {
+    ensure_installed = {
+      "lua",
+      "vimdoc",
+      "markdown",
+      "markdown_inline",
+    },
+    highlight = { enable = true },
+    indent = { enable = true },
+  },
 }
