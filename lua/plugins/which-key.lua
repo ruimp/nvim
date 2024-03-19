@@ -12,6 +12,7 @@ return {
 			h = "harpoon",
 			t = "toggle",
 			x = "trouble",
+      o = "org",
 			G = "git",
 		}
 		local opts = { prefix = "<leader>" }

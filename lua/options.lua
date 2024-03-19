@@ -20,10 +20,8 @@ local options = {
 	undofile = true,
 
 	-- Visual
-	termguicolors = true,
 	cursorline = true,
 	signcolumn = "yes",
-	colorcolumn = "80",
 	completeopt = { "menuone", "noselect" },
 	timeout = true,
 	timeoutlen = 300,
