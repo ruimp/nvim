@@ -1,0 +1,29 @@
+{
+  "Fraction": {
+    "prefix": [
+      "frac"
+    ],
+    "body": [
+      "\\frac{$1}{$2} $0"
+    ],
+    "description": "Fraction"
+  },
+  "Derivative": {
+    "prefix": [
+      "dv"
+    ],
+    "body": [
+      "\\frac{\\drm $1}{\\drm $2} $0"
+    ],
+    "description": "Derivative"
+  },
+  "Partial Derivative": {
+    "prefix": [
+      "pdv"
+    ],
+    "body": [
+      "\\frac{\\partial $1}{\\partial $2} $0"
+    ],
+    "description": "Partial Derivative"
+  }
+}

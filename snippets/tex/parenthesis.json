@@ -1,0 +1,119 @@
+{
+  "big Parenthesis": {
+    "prefix": [
+      "bigp"
+    ],
+    "body": [
+      "\\bigl( $1 \\bigr)$0"
+    ],
+    "description": "big Parenthesis ()"
+  },
+  "Big Parenthesis": {
+    "prefix": [
+      "Bigp"
+    ],
+    "body": [
+      "\\Bigl( $1 \\Bigr)$0"
+    ],
+    "description": "Big Parenthesis ()"
+  },
+  "bigg Parenthesis": {
+    "prefix": [
+      "biggp"
+    ],
+    "body": [
+      "\\biggl( $1 \\biggr)$0"
+    ],
+    "description": "bigg Parenthesis ()"
+  },
+  "Bigg Parenthesis": {
+    "prefix": [
+      "Biggp"
+    ],
+    "body": [
+      "\\Biggl( $1 \\Biggr)$0"
+    ],
+    "description": "Bigg Parenthesis ()"
+  },
+  "big Brackets": {
+    "prefix": [
+      "bigb"
+    ],
+    "body": [
+      "\\bigl[ $1 \\bigr]$0"
+    ],
+    "description": "big Brackets []"
+  },
+  "Big Brackets": {
+    "prefix": [
+      "Bigb"
+    ],
+    "body": [
+      "\\Bigl[ $1 \\Bigr]$0"
+    ],
+    "description": "Big Brackets []"
+  },
+  "bigg Brackets": {
+    "prefix": [
+      "biggb"
+    ],
+    "body": [
+      "\\biggl[ $1 \\biggr]$0"
+    ],
+    "description": "bigg Brackets []"
+  },
+  "Bigg Brackets": {
+    "prefix": [
+      "Biggb"
+    ],
+    "body": [
+      "\\Biggl[ $1 \\Biggr]$0"
+    ],
+    "description": "Bigg Brackets []"
+  },
+  "big Curly Brackets": {
+    "prefix": [
+      "bigc"
+    ],
+    "body": [
+      "\\bigl\\{ $1 \\bigr\\\\}$0"
+    ],
+    "description": "big Curly Parenthesis {}"
+  },
+  "Big Curly Brackets": {
+    "prefix": [
+      "Bigc"
+    ],
+    "body": [
+      "\\Bigl\\{ $1 \\Bigr\\\\}$0"
+    ],
+    "description": "Big Curly Brackets {}"
+  },
+  "bigg Curly Brackets": {
+    "prefix": [
+      "biggc"
+    ],
+    "body": [
+      "\\biggl\\{ $1 \\biggr\\\\}$0"
+    ],
+    "description": "bigg Curly Brackets {}"
+  },
+  "Bigg Curly Brackets": {
+    "prefix": [
+      "Biggc"
+    ],
+    "body": [
+      "\\Biggl\\{ $1 \\Biggr\\\\}$0"
+    ],
+    "description": "Bigg Curly Brackets {}"
+  },
+  "Angle Brackets": {
+    "prefix": [
+      "angle"
+    ],
+    "body": [
+      "\\langle $1 \\rangle$0"
+    ],
+    "description": "Angle Brackets"
+  }
+}
