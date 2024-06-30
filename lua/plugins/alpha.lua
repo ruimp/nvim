@@ -5,6 +5,10 @@ return {
     "nvim-lua/plenary.nvim",
   },
   config = function()
-    require("alpha").setup(require("alpha.themes.theta").config)
+    local alpha = require("alpha")
+    local theta = require("alpha.themes.theta")
+    alpha.setup(theta.config)
+
+    vim.keymap.set("n", "<leader>D", "<cmd>Alpha<cr>", { desc = "Dashboard" })
   end,
 }

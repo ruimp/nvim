@@ -12,7 +12,7 @@
   },
   "Example": {
     "prefix": [
-      "example"
+      "exa"
     ],
     "body": [
       "\\begin{example}",
@@ -20,6 +20,50 @@
       "\\end{example}"
     ],
     "description": "Example Environment"
+  },
+  "Definition": {
+    "prefix": [
+      "def"
+    ],
+    "body": [
+      "\\begin{definition}",
+      "  $0",
+      "\\end{definition}"
+    ],
+    "description": "Definition Environment"
+  },
+  "Theorem": {
+    "prefix": [
+      "thm"
+    ],
+    "body": [
+      "\\begin{theorem}",
+      "  $0",
+      "\\end{theorem}"
+    ],
+    "description": "Theorem Environment"
+  },
+  "Lemma": {
+    "prefix": [
+      "lem"
+    ],
+    "body": [
+      "\\begin{lemma}",
+      "  $0",
+      "\\end{lemma}"
+    ],
+    "description": "Lemma Environment"
+  },
+  "Proposition": {
+    "prefix": [
+      "prop"
+    ],
+    "body": [
+      "\\begin{proposition}",
+      "  $0",
+      "\\end{proposition}"
+    ],
+    "description": "Proposition Environment"
   },
   "Equation": {
     "prefix": [

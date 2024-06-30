@@ -5,12 +5,15 @@ return {
     require("which-key").setup()
     -- normal mode
     require("which-key").register({
-      c = { name = "code", _ = "which_key_ignore" },
-      f = { name = "find", _ = "which_key_ignore" },
+      b = { name = "Buffers", _ = "which_key_ignore" },
+      c = { name = "Code", _ = "which_key_ignore" },
+      f = { name = "Find", _ = "which_key_ignore" },
+      g = { name = "Git", _ = "which_key_ignore" },
       -- d = { name = "document", _ = "which_key_ignore" },
-      r = { name = "rename", _ = "which_key_ignore" },
+      q = { name = "Session", _ = "which_key_ignore" },
+      r = { name = "Rename", _ = "which_key_ignore" },
       -- w = { name = "workspace", _ = "which_key_ignore" },
-      t = { name = "toggle", _ = "which_key_ignore" },
+      t = { name = "Toggle", _ = "which_key_ignore" },
       -- h = { name = "git hunk", _ = "which_key_ignore" },
     }, { prefix = "<leader>" })
     -- -- visual mode

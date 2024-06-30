@@ -46,7 +46,7 @@ return { -- Autocompletion
       sources = {
         { name = "snippets" },
         { name = "nvim_lsp" },
-        { name = "cmp-vimtex " },
+        { name = "cmp-vimtex" },
         { name = "path" },
         { name = "buffer" },
       },
