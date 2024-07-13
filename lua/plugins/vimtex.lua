@@ -14,5 +14,8 @@ return {
       "Underfull",
       "Overfull",
     }
+    vim.g.vimtex_syntax_conceal = {
+      spacing = false,
+    }
   end,
 }

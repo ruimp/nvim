@@ -1,7 +1,6 @@
 return {
   "ibhagwan/fzf-lua",
   dependencies = { "nvim-tree/nvim-web-devicons" },
-  build = "./install --bin",
   keys = {
     {
       "<leader>ff",
