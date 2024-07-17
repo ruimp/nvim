@@ -62,7 +62,17 @@ return {
         keys = {
           { "<leader>K", "<plug>(vimtex-doc-package)", desc = "Vimtex Docs", silient = true },
         },
+        settings = {
+          texlab = {
+            diagnostics = {
+              ignoredPatterns = {
+                "Unused entry",
+              },
+            },
+          },
+        },
       },
+      proselint = {},
     }
 
     -- Ensure the servers and tools above are installed
@@ -71,6 +81,7 @@ return {
     vim.list_extend(ensure_installed, {
       "stylua",
       "texlab",
+      "proselint",
     })
     require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
     require("mason-lspconfig").setup({
