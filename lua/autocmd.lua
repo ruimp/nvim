@@ -9,12 +9,12 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- Setup latex formatting
 vim.api.nvim_create_autocmd("FileType", {
-  group = vim.api.nvim_create_augroup("custom-latex", { clear = true }),
-  pattern = { "latex", "tex" },
+  group = vim.api.nvim_create_augroup("custom-text", { clear = true }),
+  pattern = { "latex", "plaintex", "typst", "markdown" },
   callback = function()
     vim.opt_local.wrap = true
     vim.opt_local.linebreak = true
-    vim.opt_local.spell = true
+    vim.opt_local.spell = false
 
     -- Testing conceal tweaks, defaults to conceallevel=2
     -- vim.opt_local.conceallevel = 0

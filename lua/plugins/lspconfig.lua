@@ -72,7 +72,26 @@ return {
           },
         },
       },
-      proselint = {},
+      ltex = {
+        settings = {
+          ltex = {
+            language = "en-US",
+            dictionary = "dict.txt",
+            checkFrequency = "save",
+          },
+        },
+      },
+      tinymist = {
+        cmd = { "tinymist" },
+        single_file_support = true,
+        root_dir = function()
+          return vim.fn.getcwd()
+        end,
+        settings = {
+          compileStatus = "enable",
+          formatterMode = "typstyle",
+        },
+      },
     }
 
     -- Ensure the servers and tools above are installed
@@ -81,7 +100,8 @@ return {
     vim.list_extend(ensure_installed, {
       "stylua",
       "texlab",
-      "proselint",
+      "ltex",
+      "tinymist",
     })
     require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
     require("mason-lspconfig").setup({

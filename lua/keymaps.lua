@@ -19,3 +19,15 @@ vim.keymap.set({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { desc = "Up",
 
 -- Package manager
 vim.keymap.set("n", "<leader>L", "<cmd>Lazy check<enter>", { desc = "Lazy" })
+
+-- Typst
+vim.keymap.set("n", "<leader>ctw", function()
+  local file = vim.fn.expand("%:p")
+  vim.cmd("silent terminal typst watch " .. file)
+end, { desc = "Watch" })
+
+vim.keymap.set("n", "<leader>cto", function()
+  local file = vim.fn.expand("%:p"):sub(1, -4) .. "pdf"
+  print(file)
+  vim.fn.system("open -a Skim.app " .. file)
+end, { desc = "Open" })
