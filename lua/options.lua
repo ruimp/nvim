@@ -37,9 +37,8 @@ vim.opt.updatetime = 250
 -- Conceal level
 vim.opt.conceallevel = 2
 
--- Decrease mapped sequence wait time
--- Displays which-key popup sooner
-vim.opt.timeoutlen = 300
+-- Timeout for sequences of keymaps
+vim.opt.timeoutlen = 1000
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true

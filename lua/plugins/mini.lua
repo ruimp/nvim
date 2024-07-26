@@ -3,111 +3,129 @@ return {
   "echasnovski/mini.nvim",
   lazy = false,
   config = function()
-    -- MiniAi
+    -- ── MiniAi ──────────────────────────────────────────────────────────
     require("mini.ai").setup({ n_lines = 500 })
 
-    -- MiniBracketed
+    -- ── MiniBracketed ───────────────────────────────────────────────────
     require("mini.bracketed").setup()
 
-    -- MiniBufremove
-    require("mini.bufremove").setup()
+    -- ── MiniBufremove ───────────────────────────────────────────────────
+    local bufremove = require("mini.bufremove")
+    bufremove.setup()
+
     vim.keymap.set("n", "<leader>bd", function()
-      require("mini.bufremove").delete()
+      bufremove.delete()
     end, { desc = "Delete" })
     vim.keymap.set("n", "<leader>bw", function()
-      require("mini.bufremove").wipeout()
+      bufremove.wipeout()
     end, { desc = "Wipeout" })
     vim.keymap.set("n", "<leader>bh", function()
-      require("mini.bufremove").unshow()
+      bufremove.unshow()
     end, { desc = "Hide" })
 
-    -- MiniCursorword
+    -- ── MiniCursorword ──────────────────────────────────────────────────
     require("mini.cursorword").setup()
 
-    -- MiniDiff
-    require("mini.diff").setup({
+    -- ── MiniDiff ────────────────────────────────────────────────────────
+    local diff = require("mini.diff")
+    diff.setup({
       opts = {
         view = {
           style = "sign",
-          signs = {
-            add = "▎",
-            change = "▎",
-            delete = "",
-          },
+          signs = { add = "▎", change = "▎", delete = "" },
         },
       },
     })
     vim.keymap.set("n", "<leader>go", function()
-      require("mini.diff").toggle_overlay(0)
+      diff.toggle_overlay(0)
     end, { desc = "Overlay" })
 
-    -- MiniExtra
+    -- ── MiniExtra ───────────────────────────────────────────────────────
     require("mini.extra").setup()
 
-    -- MiniFiles
-    require("mini.files").setup()
+    -- ── MiniFiles ───────────────────────────────────────────────────────
+    local files = require("mini.files")
+
+    -- Filter hides dotfiles
+    local dotFilter = function(fs_entry)
+      return not vim.startswith(fs_entry.name, ".")
+    end
+
+    files.setup({ content = { filter = dotFilter } })
+
     vim.keymap.set("n", "<leader>fe", function()
-      require("mini.files").open()
+      files.open()
     end, { desc = "Explorer" })
 
-    -- MiniIcons
+    -- ── MiniIcons ───────────────────────────────────────────────────────
     require("mini.icons").setup()
 
-    -- MiniIndentscope
-    require("mini.indentscope").setup({
+    -- ── MiniIndentscope ─────────────────────────────────────────────────
+    local indentscope = require("mini.indentscope")
+    indentscope.setup({
       symbol = "|",
-      draw = { animation = require("mini.indentscope").gen_animation.none() },
+      draw = { animation = indentscope.gen_animation.none() },
     })
 
-    -- MiniNotify
-    require("mini.notify").setup({
-      window = { winblend = 0 },
-    })
+    -- ── MiniJump2d ──────────────────────────────────────────────────────
+    require("mini.jump2d").setup({ view = { dim = true } })
 
-    -- MiniPairs
+    -- ── MiniMisc ────────────────────────────────────────────────────────
+    local misc = require("mini.misc")
+    misc.setup()
+    misc.setup_auto_root()
+
+    -- ── MiniNotify ──────────────────────────────────────────────────────
+    require("mini.notify").setup({ window = { winblend = 0 } })
+
+    -- ── MiniPairs ───────────────────────────────────────────────────────
     require("mini.pairs").setup()
 
-    -- MiniPick
-    require("mini.pick").setup()
+    -- ── MiniPick ────────────────────────────────────────────────────────
+    local pick = require("mini.pick")
+    pick.setup()
+
     vim.keymap.set("n", "<leader>ff", function()
-      require("mini.pick").builtin.files()
+      pick.builtin.files()
     end, { desc = "Files" })
     vim.keymap.set("n", "<leader>fc", function()
-      local configDir = vim.fn.fnamemodify("~/.config/nvim", ":p")
-      require("mini.pick").builtin.files({}, { source = { cwd = configDir } })
+      local configDir = vim.fn.expand("$HOME/.config/nvim")
+      pick.builtin.files({}, { source = { cwd = configDir } })
     end, { desc = "Config" })
     vim.keymap.set("n", "<leader>fg", function()
-      require("mini.pick").builtin.grep_live()
+      pick.builtin.grep_live()
     end, { desc = "Grep" })
     vim.keymap.set("n", "<leader>fb", function()
-      require("mini.pick").builtin.buffers()
+      pick.builtin.buffers()
     end, { desc = "Buffers" })
     vim.keymap.set("n", "<leader>fh", function()
-      require("mini.pick").builtin.help()
+      pick.builtin.help()
     end, { desc = "Help" })
     vim.keymap.set("n", "<leader>fd", function()
-      require("mini.extra").pickers.diagnostic()
+      pick.pickers.diagnostic()
     end, { desc = "Diagnostics" })
     vim.keymap.set("n", "<leader>fo", function()
-      require("mini.extra").pickers.oldfiles()
+      pick.pickers.oldfiles()
     end, { desc = "Old files" })
     vim.keymap.set("n", "<leader>fG", function()
-      require("mini.extra").pickers.git_hunks()
+      pick.pickers.git_hunks()
     end, { desc = "Git hunks" })
 
-    -- MiniSessions
+    -- ── MiniSessions ────────────────────────────────────────────────────
     require("mini.sessions").setup()
 
-    -- MiniStatusline
+    -- ── MiniStatusline ──────────────────────────────────────────────────
     require("mini.statusline").setup()
 
-    -- MiniSurround
+    -- ── MiniSurround ────────────────────────────────────────────────────
     require("mini.surround").setup()
 
-    -- MiniTabline
+    vim.keymap.set({ "n", "x" }, "s", "<nop>")
+
+    -- ── MiniTabline ─────────────────────────────────────────────────────
     require("mini.tabline").setup()
 
-    -- MiniStarter
+    -- ── MiniStarter ─────────────────────────────────────────────────────
     local starter = require("mini.starter")
     starter.setup({
       footer = os.date(),
@@ -130,13 +148,15 @@ return {
       starter.open()
     end, { desc = "Dashboard" })
 
-    -- MiniClue
+    -- ── MiniClue ────────────────────────────────────────────────────────
     local clue = require("mini.clue")
     clue.setup({
       triggers = {
         -- leader
         { mode = "n", keys = "<leader>" },
         { mode = "x", keys = "<leader>" },
+        { mode = "n", keys = "<localleader>" },
+        { mode = "x", keys = "<localleader>" },
         -- g key
         { mode = "n", keys = "g" },
         { mode = "x", keys = "g" },
@@ -176,10 +196,7 @@ return {
         { mode = "n", keys = "<leader>r", desc = "Rename" },
         { mode = "n", keys = "<leader>q", desc = "Sessions" },
       },
-      window = {
-        delay = 300,
-        width = "auto",
-      },
+      window = { delay = 300, width = "auto" },
     })
   end,
 }

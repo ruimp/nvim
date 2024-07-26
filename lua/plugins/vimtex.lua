@@ -13,6 +13,7 @@ return {
     vim.g.vimtex_quickfix_ignore_filters = {
       "Underfull",
       "Overfull",
+      "Token not allowed in a PDF",
     }
     vim.g.vimtex_syntax_conceal = {
       spacing = false,
