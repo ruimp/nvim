@@ -41,7 +41,24 @@ return {
     end, { desc = "Overlay" })
 
     -- ── MiniExtra ───────────────────────────────────────────────────────
+    local extra = require("mini.extra")
     require("mini.extra").setup()
+
+    vim.keymap.set("n", "<leader>fd", function()
+      extra.pickers.diagnostic()
+    end, { desc = "Diagnostics" })
+
+    vim.keymap.set("n", "<leader>fo", function()
+      extra.pickers.oldfiles()
+    end, { desc = "Old files" })
+
+    vim.keymap.set("n", "<leader>fG", function()
+      extra.pickers.git_hunks()
+    end, { desc = "Git hunks" })
+
+    vim.keymap.set("n", "<leader>fH", function()
+      extra.pickers.hipatterns()
+    end, { desc = "Highlights" })
 
     -- ── MiniFiles ───────────────────────────────────────────────────────
     local files = require("mini.files")
@@ -56,6 +73,20 @@ return {
     vim.keymap.set("n", "<leader>fe", function()
       files.open()
     end, { desc = "Explorer" })
+
+    -- ── MiniHipatterns ──────────────────────────────────────────────────
+    local hipatterns = require("mini.hipatterns")
+    hipatterns.setup({
+      highlighters = {
+        -- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
+        fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
+        hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
+        todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
+        note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
+        -- Highlight hex color strings (`#rrggbb`) using that color
+        hex_color = hipatterns.gen_highlighter.hex_color(),
+      },
+    })
 
     -- ── MiniIcons ───────────────────────────────────────────────────────
     require("mini.icons").setup()
@@ -88,28 +119,23 @@ return {
     vim.keymap.set("n", "<leader>ff", function()
       pick.builtin.files()
     end, { desc = "Files" })
+
     vim.keymap.set("n", "<leader>fc", function()
       local configDir = vim.fn.expand("$HOME/.config/nvim")
       pick.builtin.files({}, { source = { cwd = configDir } })
     end, { desc = "Config" })
+
     vim.keymap.set("n", "<leader>fg", function()
       pick.builtin.grep_live()
     end, { desc = "Grep" })
+
     vim.keymap.set("n", "<leader>fb", function()
       pick.builtin.buffers()
     end, { desc = "Buffers" })
+
     vim.keymap.set("n", "<leader>fh", function()
       pick.builtin.help()
     end, { desc = "Help" })
-    vim.keymap.set("n", "<leader>fd", function()
-      pick.pickers.diagnostic()
-    end, { desc = "Diagnostics" })
-    vim.keymap.set("n", "<leader>fo", function()
-      pick.pickers.oldfiles()
-    end, { desc = "Old files" })
-    vim.keymap.set("n", "<leader>fG", function()
-      pick.pickers.git_hunks()
-    end, { desc = "Git hunks" })
 
     -- ── MiniSessions ────────────────────────────────────────────────────
     require("mini.sessions").setup()
