@@ -15,6 +15,9 @@ vim.opt.relativenumber = true
 -- Enable mouse mode
 vim.opt.mouse = "a"
 
+-- Fold level
+vim.opt.foldlevel = 99
+
 -- Don't show the mode
 vim.opt.showmode = false
 

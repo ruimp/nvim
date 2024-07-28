@@ -109,6 +109,9 @@ return {
     -- ── MiniNotify ──────────────────────────────────────────────────────
     require("mini.notify").setup({ window = { winblend = 0 } })
 
+    -- ── MiniOperators ───────────────────────────────────────────────────
+    require("mini.operators").setup()
+
     -- ── MiniPairs ───────────────────────────────────────────────────────
     require("mini.pairs").setup()
 
@@ -160,6 +163,7 @@ return {
         starter.gen_hook.aligning("center", "center"),
       },
       items = {
+        starter.sections.sessions(5, true),
         starter.sections.recent_files(5, false, false),
         { action = "Lazy check", name = "Plugins", section = "Actions" },
       },
@@ -220,7 +224,7 @@ return {
         { mode = "n", keys = "<leader>t", desc = "Toggle" },
         { mode = "n", keys = "<leader>x", desc = "Diagnostics" },
         { mode = "n", keys = "<leader>r", desc = "Rename" },
-        { mode = "n", keys = "<leader>q", desc = "Sessions" },
+        -- { mode = "n", keys = "<leader>q", desc = "Sessions" },
       },
       window = { delay = 300, width = "auto" },
     })
