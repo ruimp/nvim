@@ -13,13 +13,16 @@ return {
   -- Zenbones
   {
     "zenbones-theme/zenbones.nvim",
+    dependencies = "rktjmp/lush.nvim",
     lazy = false,
     priority = 1000,
-    dependencies = { "rktjmp/lush.nvim" },
     config = function()
-      vim.cmd.background = "light"
-      vim.cmd.colorscheme = "zenwritten"
-      vim.g.lightness = "bright"
+      vim.opt.background = "light"
+      vim.cmd.colorscheme("zenwritten")
+      vim.g.zenwritten = {
+        lightness = "bright",
+        darken_line_nr = 45,
+      }
     end,
   },
 }

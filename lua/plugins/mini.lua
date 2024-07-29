@@ -141,7 +141,12 @@ return {
     end, { desc = "Help" })
 
     -- ── MiniSessions ────────────────────────────────────────────────────
-    require("mini.sessions").setup()
+    local sessions = require("mini.sessions")
+    sessions.setup()
+
+    vim.keymap.set("n", "<leader>s", function()
+      sessions.select()
+    end, { desc = "Sessions" })
 
     -- ── MiniStatusline ──────────────────────────────────────────────────
     require("mini.statusline").setup()
