@@ -6,6 +6,28 @@ return {
     -- ── MiniAi ──────────────────────────────────────────────────────────
     require("mini.ai").setup({ n_lines = 500 })
 
+    -- ── MiniBase16 ──────────────────────────────────────────────────────
+    require("mini.base16").setup({
+      palette = {
+        base00 = "#000000",
+        base01 = "#191919",
+        base02 = "#272727",
+        base03 = "#363636",
+        base04 = "#989898",
+        base05 = "#C0C0C0",
+        base06 = "#989898",
+        base07 = "#C0C0C0",
+        base08 = "#5F8686",
+        base09 = "#A9A9A9",
+        base0A = "#98BAA9",
+        base0B = "#DCEDCB",
+        base0C = "#A9A9A9",
+        base0D = "#878787",
+        base0E = "#989898",
+        base0F = "#464646",
+      },
+    })
+
     -- ── MiniBracketed ───────────────────────────────────────────────────
     require("mini.bracketed").setup()
 

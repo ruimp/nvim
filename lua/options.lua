@@ -3,10 +3,15 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
 -- [[ Setting options ]]
+
+-- Indenting
 vim.opt.smartindent = true
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
+
+-- Colors
+vim.opt.background = "dark"
 
 -- Line numbers
 vim.opt.number = true
