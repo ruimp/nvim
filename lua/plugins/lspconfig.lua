@@ -88,8 +88,9 @@ return {
           return vim.fn.getcwd()
         end,
         settings = {
-          compileStatus = "enable",
+          exportPdf = "onSave",
           formatterMode = "typstyle",
+          formatterPrintWidth = 80,
         },
       },
     }

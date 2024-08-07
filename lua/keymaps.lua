@@ -13,21 +13,9 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 
 -- Moving up and down
 vim.keymap.set({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
-vim.keymap.set({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
+vim.keymap.set({ "n", "x" }, "<down>", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
 vim.keymap.set({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
-vim.keymap.set({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
+vim.keymap.set({ "n", "x" }, "<up>", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 
--- Package manager
+-- Plugin manager
 vim.keymap.set("n", "<leader>L", "<cmd>Lazy check<enter>", { desc = "Lazy" })
-
--- Typst
-vim.keymap.set("n", "<leader>ctw", function()
-  local file = vim.fn.expand("%:p")
-  vim.cmd("silent terminal typst watch " .. file)
-end, { desc = "Watch" })
-
-vim.keymap.set("n", "<leader>cto", function()
-  local file = vim.fn.expand("%:p"):sub(1, -4) .. "pdf"
-  print(file)
-  vim.fn.system("open -a Skim.app " .. file)
-end, { desc = "Open" })

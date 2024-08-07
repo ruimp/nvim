@@ -120,9 +120,6 @@ return {
       draw = { animation = indentscope.gen_animation.none() },
     })
 
-    -- ── MiniJump2d ──────────────────────────────────────────────────────
-    require("mini.jump2d").setup({ view = { dim = true } })
-
     -- ── MiniMisc ────────────────────────────────────────────────────────
     local misc = require("mini.misc")
     misc.setup()
