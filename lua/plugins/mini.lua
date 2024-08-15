@@ -202,55 +202,57 @@ return {
       starter.open()
     end, { desc = "Dashboard" })
 
-    -- ── MiniClue ────────────────────────────────────────────────────────
-    local clue = require("mini.clue")
-    clue.setup({
-      triggers = {
-        -- leader
-        { mode = "n", keys = "<leader>" },
-        { mode = "x", keys = "<leader>" },
-        { mode = "n", keys = "<localleader>" },
-        { mode = "x", keys = "<localleader>" },
-        -- g key
-        { mode = "n", keys = "g" },
-        { mode = "x", keys = "g" },
-        -- z key
-        { mode = "n", keys = "z" },
-        { mode = "x", keys = "z" },
-        -- brackets
-        { mode = "n", keys = "[" },
-        { mode = "n", keys = "]" },
-        -- quotes
-        { mode = "n", keys = '"' },
-        { mode = "x", keys = '"' },
-        { mode = "n", keys = "`" },
-        { mode = "x", keys = "`" },
-        -- ctrl+w
-        { mode = "n", keys = "<C-w>" },
-        -- ctrl+i
-        { mode = "i", keys = "<C-i>" },
-        -- ctrl+r
-        { mode = "n", keys = "<C-r" },
-        { mode = "x", keys = "<C-r" },
-      },
-      clues = {
-        clue.gen_clues.builtin_completion(),
-        clue.gen_clues.registers(),
-        clue.gen_clues.windows(),
-        clue.gen_clues.marks(),
-        clue.gen_clues.g(),
-        clue.gen_clues.z(),
-        { mode = "n", keys = "<leader>b", desc = "Buffers" },
-        { mode = "n", keys = "<leader>f", desc = "Find" },
-        { mode = "n", keys = "<leader>g", desc = "Git" },
-        { mode = "n", keys = "<leader>c", desc = "Code" },
-        { mode = "n", keys = "<leader>C", desc = "Comments" },
-        { mode = "n", keys = "<leader>t", desc = "Toggle" },
-        { mode = "n", keys = "<leader>x", desc = "Diagnostics" },
-        { mode = "n", keys = "<leader>r", desc = "Rename" },
-        -- { mode = "n", keys = "<leader>q", desc = "Sessions" },
-      },
-      window = { delay = 300, width = "auto" },
-    })
+    -- -- ── MiniClue ────────────────────────────────────────────────────────
+    -- local clue = require("mini.clue")
+    -- clue.setup({
+    --   triggers = {
+    --     -- leader
+    --     { mode = "n", keys = "<leader>" },
+    --     { mode = "x", keys = "<leader>" },
+    --     { mode = "n", keys = "<localleader>" },
+    --     { mode = "x", keys = "<localleader>" },
+    --     -- g key
+    --     { mode = "n", keys = "g" },
+    --     { mode = "x", keys = "g" },
+    --     -- z key
+    --     { mode = "n", keys = "z" },
+    --     { mode = "x", keys = "z" },
+    --     -- brackets
+    --     { mode = "n", keys = "[" },
+    --     { mode = "n", keys = "]" },
+    --     -- quotes
+    --     { mode = "n", keys = '"' },
+    --     { mode = "x", keys = '"' },
+    --     { mode = "n", keys = "`" },
+    --     { mode = "x", keys = "`" },
+    --     -- ctrl+w
+    --     { mode = "n", keys = "<C-w>" },
+    --     -- ctrl+i
+    --     { mode = "i", keys = "<C-i>" },
+    --     -- ctrl+r
+    --     { mode = "n", keys = "<C-r" },
+    --     { mode = "x", keys = "<C-r" },
+    --     -- VimTeX
+    --     { mode = "n", keys = "<localleader>l" },
+    --   },
+    --   clues = {
+    --     clue.gen_clues.builtin_completion(),
+    --     clue.gen_clues.registers(),
+    --     clue.gen_clues.windows(),
+    --     clue.gen_clues.marks(),
+    --     clue.gen_clues.g(),
+    --     clue.gen_clues.z(),
+    --     { mode = "n", keys = "<leader>b", desc = "Buffers" },
+    --     { mode = "n", keys = "<leader>f", desc = "Find" },
+    --     { mode = "n", keys = "<leader>g", desc = "Git" },
+    --     { mode = "n", keys = "<leader>c", desc = "Code" },
+    --     { mode = "n", keys = "<leader>C", desc = "Comments" },
+    --     { mode = "n", keys = "<leader>t", desc = "Toggle" },
+    --     { mode = "n", keys = "<leader>x", desc = "Diagnostics" },
+    --     { mode = "n", keys = "<leader>r", desc = "Rename" },
+    --     -- { mode = "n", keys = "<leader>q", desc = "Sessions" },
+    --   },
+    --   window = { delay = 300, width = 50 },
+    -- })
   end,
 }
