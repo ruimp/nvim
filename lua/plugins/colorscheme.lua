@@ -6,4 +6,5 @@ return {
   },
   -- Base16 black metal
   { "metalelf0/base16-black-metal-scheme" },
+  -- Tokyo
 }

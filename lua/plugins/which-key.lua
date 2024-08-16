@@ -3,10 +3,13 @@ return {
   event = "VeryLazy",
   config = function()
     local wk = require("which-key")
-    wk.setup({ icons = {
-      mappings = false,
-      separator = ">",
-    } })
+    wk.setup({
+      preset = "helix",
+      icons = {
+        mappings = false,
+        separator = "->",
+      },
+    })
     wk.add({
       { "<leader>b", group = "Buffers" },
       { "<leader>f", group = "Find" },
