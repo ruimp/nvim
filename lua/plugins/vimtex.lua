@@ -18,5 +18,7 @@ return {
     vim.g.vimtex_syntax_conceal = {
       spacing = false,
     }
+    vim.g.vimtex_fold_enabled = true
+    vim.g.vimtex_fold_manual = true
   end,
 }

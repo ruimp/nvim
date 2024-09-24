@@ -82,7 +82,6 @@ return {
         },
       },
       tinymist = {
-        cmd = { "tinymist" },
         single_file_support = true,
         root_dir = function()
           return vim.fn.getcwd()
@@ -90,7 +89,8 @@ return {
         settings = {
           exportPdf = "onSave",
           formatterMode = "typstyle",
-          formatterPrintWidth = 80,
+          systemFonts = true,
+          -- formatterPrintWidth = 80,
         },
       },
     }
