@@ -2,9 +2,10 @@
 vim.opt_local.wrap = true
 vim.opt_local.linebreak = true
 vim.opt_local.spell = true
+vim.opt_local.colorcolumn = "80"
 
 -- Comment format
-vim.opt.commentstring = "// %s"
+vim.opt_local.commentstring = "// %s"
 
 -- Keymaps
 vim.keymap.set("n", "<localleader>o", function()

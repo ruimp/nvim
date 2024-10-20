@@ -4,6 +4,9 @@ vim.g.maplocalleader = ","
 
 -- [[ Setting options ]]
 
+-- Automatically change working directory
+vim.opt.autochdir = true
+
 -- Indenting
 vim.opt.smartindent = true
 vim.opt.expandtab = true

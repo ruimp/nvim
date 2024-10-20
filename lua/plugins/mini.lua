@@ -6,27 +6,27 @@ return {
     -- ── MiniAi ──────────────────────────────────────────────────────────
     require("mini.ai").setup({ n_lines = 500 })
 
-    -- ── MiniBase16 ──────────────────────────────────────────────────────
-    require("mini.base16").setup({
-      palette = {
-        base00 = "#000000",
-        base01 = "#191919",
-        base02 = "#272727",
-        base03 = "#363636",
-        base04 = "#989898",
-        base05 = "#C0C0C0",
-        base06 = "#989898",
-        base07 = "#C0C0C0",
-        base08 = "#5F8686",
-        base09 = "#A9A9A9",
-        base0A = "#9E6566",
-        base0B = "#DC9897",
-        base0C = "#A9A9A9",
-        base0D = "#878787",
-        base0E = "#989898",
-        base0F = "#464646",
-      },
-    })
+    -- -- ── MiniBase16 ──────────────────────────────────────────────────────
+    -- require("mini.base16").setup({
+    --   palette = {
+    --     base00 = "#000000",
+    --     base01 = "#191919",
+    --     base02 = "#272727",
+    --     base03 = "#363636",
+    --     base04 = "#989898",
+    --     base05 = "#C0C0C0",
+    --     base06 = "#989898",
+    --     base07 = "#C0C0C0",
+    --     base08 = "#5F8686",
+    --     base09 = "#A9A9A9",
+    --     base0A = "#9E6566",
+    --     base0B = "#DC9897",
+    --     base0C = "#A9A9A9",
+    --     base0D = "#878787",
+    --     base0E = "#989898",
+    --     base0F = "#464646",
+    --   },
+    -- })
 
     -- ── MiniBracketed ───────────────────────────────────────────────────
     require("mini.bracketed").setup()
@@ -123,13 +123,10 @@ return {
     -- ── MiniJump ────────────────────────────────────────────────────────
     require("mini.jump").setup()
 
-    -- ── MiniMap ─────────────────────────────────────────────────────────
-    require("mini.map").setup()
-
     -- ── MiniMisc ────────────────────────────────────────────────────────
     local misc = require("mini.misc")
     misc.setup()
-    misc.setup_auto_root()
+    -- misc.setup_auto_root()
 
     -- ── MiniNotify ──────────────────────────────────────────────────────
     require("mini.notify").setup({ window = { winblend = 0 } })
@@ -174,7 +171,7 @@ return {
     end, { desc = "Sessions" })
 
     -- ── MiniSplitjoin ───────────────────────────────────────────────────
-    require("mini.splitjoin").setup()
+    -- require("mini.splitjoin").setup()
 
     -- ── MiniStatusline ──────────────────────────────────────────────────
     require("mini.statusline").setup()
