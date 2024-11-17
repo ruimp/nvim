@@ -1,21 +1,10 @@
 return {
-  -- Zenbones
-  {
-    "zenbones-theme/zenbones.nvim",
-    dependencies = "rktjmp/lush.nvim",
-    priority = 1000,
-    lazy = false,
-    config = function()
-      vim.cmd.colorscheme("zenwritten")
-    end,
-  },
-  -- Base16 black metal
-  { "metalelf0/base16-black-metal-scheme" },
-  -- Kanagawa
-  {
-    "rebelot/kanagawa.nvim",
-  },
-  {
-    "aliqyan-21/darkvoid.nvim",
-  },
+  "mellow-theme/mellow.nvim",
+  priotity = 1000,
+  lazy = false,
+  config = function()
+    vim.g.mellow_italic_functions = true
+    vim.g.mellow_bold_functions = true
+    vim.cmd.colorscheme("mellow")
+  end,
 }

@@ -13,6 +13,7 @@ return {
       "vim",
       "vimdoc",
       "bibtex",
+      "typst",
     },
     auto_install = true,
     highlight = {

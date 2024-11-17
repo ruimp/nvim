@@ -72,15 +72,6 @@ return {
           },
         },
       },
-      ltex = {
-        settings = {
-          ltex = {
-            language = "en-US",
-            dictionary = "dict.txt",
-            checkFrequency = "save",
-          },
-        },
-      },
       tinymist = {
         offset_encoding = "utf-8",
         single_file_support = true,
@@ -102,7 +93,6 @@ return {
     vim.list_extend(ensure_installed, {
       "stylua",
       "texlab",
-      "ltex",
       "tinymist",
     })
     require("mason-tool-installer").setup({ ensure_installed = ensure_installed })

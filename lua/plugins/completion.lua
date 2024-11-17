@@ -1,4 +1,5 @@
-return { -- Autocompletion
+-- Completion
+return {
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",
   dependencies = {
@@ -44,7 +45,6 @@ return { -- Autocompletion
       }),
       sources = {
         { name = "snippets" },
-        { name = "lazydev" },
         { name = "nvim_lsp" },
         { name = "cmp-vimtex" },
         { name = "path" },

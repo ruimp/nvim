@@ -45,6 +45,65 @@ return {
       bufremove.unshow()
     end, { desc = "Hide" })
 
+    -- ── MiniClue ────────────────────────────────────────────────────────
+    local clue = require("mini.clue")
+    clue.setup({
+      triggers = {
+        -- Leader
+        { mode = "n", keys = "<leader>" },
+        { mode = "x", keys = "<leader>" },
+        { mode = "n", keys = "<localleader>" },
+        { mode = "x", keys = "<localleader>" },
+        -- g
+        { mode = "n", keys = "g" },
+        { mode = "x", keys = "g" },
+        -- z
+        { mode = "n", keys = "z" },
+        { mode = "x", keys = "z" },
+        -- Windows
+        { mode = "n", keys = "<c-w>" },
+        -- Registers
+        { mode = "n", keys = '"' },
+        { mode = "x", keys = '"' },
+        { mode = "i", keys = "<c-r>" },
+        { mode = "c", keys = "<c-r>" },
+        -- Marks
+        { mode = "n", keys = "'" },
+        { mode = "x", keys = "'" },
+        { mode = "n", keys = "`" },
+        { mode = "x", keys = "`" },
+        -- Brackets
+        { mode = "n", keys = "[" },
+        { mode = "n", keys = "]" },
+      },
+      clues = {
+        clue.gen_clues.builtin_completion(),
+        clue.gen_clues.g(),
+        clue.gen_clues.marks(),
+        clue.gen_clues.registers(),
+        clue.gen_clues.windows(),
+        clue.gen_clues.z(),
+        { mode = "n", keys = "<leader>f", desc = "Find" },
+        { mode = "x", keys = "<leader>f", desc = "Find" },
+        { mode = "n", keys = "<leader>b", desc = "Buffers" },
+        { mode = "x", keys = "<leader>b", desc = "Buffers" },
+        { mode = "n", keys = "<leader>C", desc = "Comments" },
+        { mode = "x", keys = "<leader>C", desc = "Comments" },
+        { mode = "n", keys = "<leader>g", desc = "Git" },
+        { mode = "x", keys = "<leader>g", desc = "Git" },
+        { mode = "n", keys = "<leader>c", desc = "Code" },
+        { mode = "x", keys = "<leader>c", desc = "Code" },
+        { mode = "n", keys = "<leader>t", desc = "Toggle" },
+        { mode = "x", keys = "<leader>t", desc = "Toggle" },
+        { mode = "n", keys = "<leader>r", desc = "Rename" },
+        { mode = "x", keys = "<leader>r", desc = "Rename" },
+      },
+      window = {
+        delay = 250,
+        config = { row = "auto", col = "auto" },
+      },
+    })
+
     -- ── MiniCursorword ──────────────────────────────────────────────────
     require("mini.cursorword").setup()
 
