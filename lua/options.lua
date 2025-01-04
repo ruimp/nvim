@@ -13,9 +13,6 @@ vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 
--- Colors
-vim.opt.background = "dark"
-
 -- Line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -69,6 +66,7 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 -- Colors
+vim.opt.background = "dark"
 vim.opt.termguicolors = true
 
 -- Set highlight on search

@@ -104,6 +104,11 @@ return {
       },
     })
 
+    -- ── MiniCompletion ──────────────────────────────────────────────────
+    require("mini.completion").setup({
+      lsp_completion = { source_func = "omnifunc" },
+    })
+
     -- ── MiniCursorword ──────────────────────────────────────────────────
     require("mini.cursorword").setup()
 
@@ -187,6 +192,9 @@ return {
     misc.setup()
     -- misc.setup_auto_root()
 
+    -- ── MiniMove ────────────────────────────────────────────────────────
+    require("mini.move").setup()
+
     -- ── MiniNotify ──────────────────────────────────────────────────────
     require("mini.notify").setup({ window = { winblend = 0 } })
 
@@ -198,14 +206,13 @@ return {
 
     -- ── MiniPick ────────────────────────────────────────────────────────
     local pick = require("mini.pick")
-    pick.setup()
 
     vim.keymap.set("n", "<leader>ff", function()
       pick.builtin.files()
     end, { desc = "Files" })
 
     vim.keymap.set("n", "<leader>fc", function()
-      local configDir = vim.fn.expand("$HOME/.config/nvim")
+      local configDir = vim.fn.stdpath("config")
       pick.builtin.files({}, { source = { cwd = configDir } })
     end, { desc = "Config" })
 
@@ -229,8 +236,16 @@ return {
       sessions.select()
     end, { desc = "Sessions" })
 
+    -- ── MiniSnippets ────────────────────────────────────────────────────
+    local gen_loader = require("mini.snippets").gen_loader
+    require("mini.snippets").setup({
+      snippets = {
+        gen_loader.from_lang()
+      },
+    })
+
     -- ── MiniSplitjoin ───────────────────────────────────────────────────
-    -- require("mini.splitjoin").setup()
+    require("mini.splitjoin").setup()
 
     -- ── MiniStatusline ──────────────────────────────────────────────────
     require("mini.statusline").setup()
